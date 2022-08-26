@@ -83,13 +83,12 @@ export default function Home() {
         <div className="row">
           <div className="col-lg-6">
             <h1 className={styles.bigHeading}>
-              Get stock recommendations based off online articles
+              Get stock recommendations with an AI researching for you
             </h1>
           </div>
-          <div className="col-lg-6">
-            <div className="if" class="answers">
-
-              <h1 className={styles.if}>If</h1>
+          <div className={styles.if} className="col-lg-6">
+            <div className="logo" class="answers">
+              <h1 className={styles.title}>If</h1>
               <form onSubmit={onSubmit}>
                 <input
                   autocomplete="off"
@@ -105,29 +104,34 @@ export default function Home() {
             </div>
 
           </div>
-
-          <div className={styles.center}>
-
-            <div className={styles.result}>{result !== undefined && result.split(", ")[0] + " "}
-
-              <hr>
-              </hr>
-              <button className={styles.but} id="stock1" type="button" class="btn btn-success"></button>
-              <button className={styles.but} id="stock1" type="button" class="btn btn-success">{result !== undefined && result.split(", ")[1]}</button>
-              <button className={styles.but} id="stock2" type="button" class="btn btn-success">{result !== undefined && result.split(", ")[2]}</button>
-
-            </div>
-          </div>
-
-
-
-
-
         </div>
+
+        <div className={styles.center}>
+
+          <div className={styles.result}>{result !== undefined && result.split(", ")[0] + " "}
+
+            <hr>
+            </hr>
+            <hr>
+            </hr>
+
+            <button className={styles.but} id="stock1" type="button" class="btn btn-success">
+              {result !== undefined && result.split(", ")[1]}</button>
+            <button className={styles.but} id="stock2" type="button" class="btn btn-success">
+              {result !== undefined && result.split(", ")[2]}</button>
+
+          </div>
+        </div>
+
+
+
+
+
+
       </main>
 
 
-    </div>
+    </div >
   );
 }
 
